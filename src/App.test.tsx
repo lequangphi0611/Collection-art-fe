@@ -1,9 +1,8 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { App } from './App';
+import { shallow, configure } from 'enzyme';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders without errors', () => {
+  const app = shallow(<App />);
+  expect(app.find('[data-test="root-app"]').exists()).toBe(true);
 });
