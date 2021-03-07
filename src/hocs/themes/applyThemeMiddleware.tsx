@@ -4,9 +4,9 @@ import { ThemeContext } from 'styled-components';
 import { ThemeMiddleWareFuncton } from './types';
 
 export const applyThemeMiddleWare = <
-  P extends Record<string, unknown> | unknown,
-  R extends Record<string, unknown>,
-  F extends Record<string, unknown>
+  P extends Record<string, unknown> = Record<string, unknown>,
+  R extends Record<string, unknown> = Record<string, unknown>,
+  F extends Record<string, unknown> = Record<string, unknown>
 >(
   middleWareFunc: ThemeMiddleWareFuncton<F, R>,
   Component: React.ComponentType<P & R>,

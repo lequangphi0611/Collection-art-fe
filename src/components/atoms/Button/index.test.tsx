@@ -1,7 +1,6 @@
 import { mount } from 'enzyme';
 import defaults from 'lodash/defaults';
-import { Button } from '.';
-import { ButtonProps } from './types';
+import { Button, ButtonProps } from '.';
 
 const setup = (props: Partial<ButtonProps> = {}) => {
   const setupProps = defaults(props, { onClick: Function, children: '' });
