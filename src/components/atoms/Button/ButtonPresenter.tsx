@@ -16,12 +16,12 @@ const StyledButton = styled.button<
 >`
   outline: none;
   border: none;
-  padding: 0.8rem;
+  padding: 8px 10px;
   font-size: 16px;
   border-radius: 5px;
-  border-color: rgb(26, 26, 26);
+  line-height: 25px;
   color: ${({ color }) => color};
-  transition: background ease 2s;
+  transition: background ease 0.5s;
   background: ${({ background }) => background};
   ${({ disabled, hoverBg }) => (disabled
       ? 'opacity: 0.8;'

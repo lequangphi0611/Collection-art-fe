@@ -1,17 +1,17 @@
 const config = {
     button: {
         secondary: {
-            background: '#fff',
-            color: '#000',
+            background: '#e8e8e8',
+            color: '#5e5e5e',
             hover: {
-                background: 'linear-gradient(0deg, #f0f0f0 0%, #fff 100%)',
+                background: '#d3d3d3',
             },
         },
         primary: {
-            background: 'green',
-            color: 'white',
+            background: '#05a081',
+            color: '#fff',
             hover: {
-                background: 'red',
+                background: '#06b995',
             },
         },
     },
