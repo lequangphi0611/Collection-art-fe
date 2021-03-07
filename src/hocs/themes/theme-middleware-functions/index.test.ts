@@ -18,7 +18,7 @@ describe('src/hocs/themes/theme-middleware-functions', () => {
                 background: themeConfig.button.primary.background,
                 color: themeConfig.button.primary.color,
                 hoverBg: themeConfig.button.primary.hover.background,
-            });;
+            });
         });
     });
 });

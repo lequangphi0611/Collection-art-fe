@@ -12,7 +12,7 @@ describe('utils/test-utils', () => {
       const wrapper = shallow(element);
       const actual = findByDataTest(wrapper, 'test-id');
       expect(
-        actual.matchesElement(<p data-test="test-id">paragraph</p>)
+        actual.matchesElement(<p data-test="test-id">paragraph</p>),
       ).toBeTruthy();
     });
 
@@ -20,7 +20,7 @@ describe('utils/test-utils', () => {
       const wrapper = mount(element);
       const actual = findByDataTest(wrapper, 'test-id');
       expect(
-        actual.matchesElement(<p data-test="test-id">paragraph</p>)
+        actual.matchesElement(<p data-test="test-id">paragraph</p>),
       ).toBeTruthy();
     });
 

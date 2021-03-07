@@ -1,3 +1,1 @@
-import './App.css';
-
-export const App = () => <div data-test="root-app" />;
+export const App: React.FC = () => <div data-test="root-app" />;

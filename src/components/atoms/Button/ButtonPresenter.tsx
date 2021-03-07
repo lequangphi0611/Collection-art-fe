@@ -1,11 +1,9 @@
-import get from 'lodash/get';
-import React from 'react';
 import styled, { css } from 'styled-components';
 import {
   applyThemeMiddleWare,
-  mapButtonTheme,
-  ButtonThemeResult,
   ButtonArgs,
+  ButtonThemeResult,
+  mapButtonTheme,
 } from '../../../hocs/themes';
 import { ButtonProps } from './types';
 
@@ -25,15 +23,14 @@ const StyledButton = styled.button<
   color: ${({ color }) => color};
   transition: background ease 2s;
   background: ${({ background }) => background};
-  ${({ disabled, hoverBg }) =>
-    disabled
+  ${({ disabled, hoverBg }) => (disabled
       ? 'opacity: 0.8;'
       : css`
           cursor: pointer;
           &:hover {
             background: ${hoverBg};
           }
-        `};
+        `)};
 `;
 
 const StyledButtonWithTheme = applyThemeMiddleWare<
@@ -50,14 +47,12 @@ export const ButtonPresenter: React.FC<ButtonProps> = ({
   onClick,
   primary,
   disabled,
-}) => {
-  return (
-    <StyledButtonWithTheme
-      disabled={disabled}
-      primary={primary}
-      onClick={onClick}
-    >
-      {children}
-    </StyledButtonWithTheme>
+}) => (
+  <StyledButtonWithTheme
+    disabled={disabled}
+    primary={primary}
+    onClick={onClick}
+  >
+    {children}
+  </StyledButtonWithTheme>
   );
-};

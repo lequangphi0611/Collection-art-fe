@@ -21,7 +21,7 @@ describe('components/atoms/Paragraph', () => {
   test('Should have text with set children props', () => {
     const PARAGRAPH_CONTENT = 'content';
     expect(setup({ children: PARAGRAPH_CONTENT }).text()).toBe(
-      PARAGRAPH_CONTENT
+      PARAGRAPH_CONTENT,
     );
   });
 });

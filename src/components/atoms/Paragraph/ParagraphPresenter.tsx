@@ -7,13 +7,11 @@ type StyledProps = Pick<ParagraphProps, 'as'> & {
 
 const StyledParagraph = styled.p<StyledProps>``;
 
-export const ParagraphPresenter = ({
+export const ParagraphPresenter: React.FC<ParagraphProps> = ({
   children,
   as,
-}: ParagraphProps) => {
-  return (
-    <StyledParagraph as={as} data-test="component-paragraph">
-      {children}
-    </StyledParagraph>
-  );
-};
+}) => (
+  <StyledParagraph as={as} data-test="component-paragraph">
+    {children}
+  </StyledParagraph>
+);

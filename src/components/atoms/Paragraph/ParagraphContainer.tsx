@@ -1,3 +1,3 @@
-import { ParagraphPresenter } from "./ParagraphPresenter";
+import { ParagraphPresenter } from './ParagraphPresenter';
 
 export const ParagraphContainer = ParagraphPresenter;

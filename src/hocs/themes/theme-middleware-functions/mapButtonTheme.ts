@@ -1,5 +1,5 @@
-import themeConfig from '../theme.config';
 import get from 'lodash/get';
+import themeConfig from '../theme.config';
 
 export type ButtonThemeResult = {
     background: string;
@@ -18,4 +18,4 @@ export const mapButtonTheme = (theme: typeof themeConfig, { primary }: ButtonArg
         color: get(theme, ['button', btnType, 'color']),
         hoverBg: get(theme, ['button', btnType, 'hover', 'background']),
     };
-}
+};

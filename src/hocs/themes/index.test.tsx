@@ -1,9 +1,6 @@
 import { mount, shallow } from 'enzyme';
-import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { setupThemeContext } from '.';
-import { findByDataTest } from '../../utils/test-utils';
-import { applyThemeMiddleWare } from '.';
+import { applyThemeMiddleWare, setupThemeContext } from '.';
 import themeConfig from './theme.config';
 
 describe('hocs/themes', () => {
@@ -14,14 +11,14 @@ describe('hocs/themes', () => {
   }>;
   const Component: React.FC<ComponentType> = () => <div />;
   describe('setupThemeContext', () => {
-    let ComponentWithThemeContext = setupThemeContext(Component);
+    const ComponentWithThemeContext = setupThemeContext(Component);
     test('Should return React component', () => {
       const wrapper = shallow(<ComponentWithThemeContext />);
       expect(wrapper.find(Component).length).toBe(1);
     });
     test('Should wrap with Theme provider', () => {
       const themeProvider = shallow(<ComponentWithThemeContext />).find(
-        ThemeProvider
+        ThemeProvider,
       );
       expect(themeProvider.length).toBe(1);
       expect(themeProvider.dive().find(Component)).toHaveLength(1);
@@ -29,7 +26,7 @@ describe('hocs/themes', () => {
 
     test('Should set props for Component', () => {
       const component = shallow(
-        <ComponentWithThemeContext disabled content="this is content !" />
+        <ComponentWithThemeContext disabled content="this is content !" />,
       ).find(Component);
       expect(component.props()).toStrictEqual({
         disabled: true,
@@ -38,9 +35,9 @@ describe('hocs/themes', () => {
     });
 
     test('Should config theme equal theme.config module', async () => {
-      const theme = shallow(<ComponentWithThemeContext />)
+      const { theme } = shallow(<ComponentWithThemeContext />)
         .find(ThemeProvider)
-        .props().theme;
+        .props();
       expect(theme).toStrictEqual(themeConfig);
     });
   });
@@ -48,10 +45,10 @@ describe('hocs/themes', () => {
   describe('applyMiddlewareTheme', () => {
     const themeValue = { text: { fontSize: '16' } };
 
-    let middleWareFunction = jest.fn();
+    const middleWareFunction = jest.fn();
     const ComponentWithThemeMiddleWare = applyThemeMiddleWare(
       middleWareFunction,
-      Component
+      Component,
     );
 
     const ComponentWithThemeContext = (props: ComponentType) => (

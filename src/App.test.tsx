@@ -1,6 +1,5 @@
-import React from 'react';
+import { shallow } from 'enzyme';
 import { App } from './App';
-import { shallow, configure } from 'enzyme';
 
 test('renders without errors', () => {
   const app = shallow(<App />);
