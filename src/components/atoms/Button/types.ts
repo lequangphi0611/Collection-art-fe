@@ -1,6 +1,8 @@
 import { ReactNode } from "react";
+import { ButtonArgs } from "../../../hocs/themes";
 
-export type ButtonProps = {
-    onClick: (event: MouseEvent) => void;
+export type ButtonProps = ButtonArgs & {
+    onClick: React.MouseEventHandler<HTMLButtonElement>;
     children: ReactNode;
+    disabled?: boolean;
 }
