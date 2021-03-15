@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import { BaseStyledImageProps, ImagePresenterProps } from './types';
 
@@ -6,4 +7,6 @@ const StyledImage = styled.img<BaseStyledImageProps>`
   height: ${({ height }) => height || '100%'};
 `;
 
-export const ImagePresenter: React.FC<ImagePresenterProps> = StyledImage;
+export const ImagePresenter: React.FC<ImagePresenterProps> = React.memo(
+  StyledImage,
+);

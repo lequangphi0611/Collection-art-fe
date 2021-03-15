@@ -31,6 +31,7 @@
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",
+    "cra-build-watch": "^3.4.0",
     "enzyme": "^3.11.0",
     "eslint": "^7.21.0",
     "eslint-config-airbnb": "^18.2.1",
@@ -49,7 +50,8 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "lint": "eslint src/**",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "watch": "cra-build-watch"
   },
   "eslintConfig": {
     "extends": [
